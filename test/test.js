@@ -588,7 +588,16 @@ var lispyscript = function() {
             return (accum + val);
         },0))) ?
         ("Passed - " + "arrayMonad when null values test") :
-        ("Failed - " + "arrayMonad when null values test")));
+        ("Failed - " + "arrayMonad when null values test")),((true === (9 === (function() {
+            var i = 1;
+            for(; ((i < 10));) {
+                 console.log(i);
+                i = (i + 1);
+; };
+            return i;
+        })())) ?
+        ("Passed - " + "for_ test") :
+        ("Failed - " + "for_ test")));
 };
 var browserTest = function() {
     var el = document.getElementById("testresult");
@@ -680,3 +689,11 @@ var browserTest = function() {
         },""),"\nTotal tests ",tests.length,"\nPassed ",passed,"\nFailed ",failed,"\nDuration ",(new Date() - start),"ms\n"].join('');
     })(lispyscript,"LispyScript Testing")) :
     window.onload = browserTest);
+(function() {
+    var i = 1;
+    for(; ((i < 10));) {
+        console.log(i);
+        i = (i + 1);
+        ; };
+    return i;
+})();
