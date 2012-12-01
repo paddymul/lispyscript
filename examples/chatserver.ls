@@ -26,7 +26,7 @@
         (if (!= currentClient client)
           (currentClient.write (str client.name " says " message)))))))
 
-;; The server connection event listener          
+;; The server connection event listener
 (chatServer.on "connection"
   (function (client)
     ;; set client.name to remote address + : + port
@@ -41,10 +41,11 @@
       (function (data)
         ;; call the broadcast function with data and client
         (broadcast data client)))
-    ;; We dont want the server to crash while writing to a disconnected
-    ;; client. The 'end' event listener is called if client disconnects.
+    ;; We dont want the server to crash while writing to a
+    ;; disconnected client. The 'end' event listener is called if
+    ;; client disconnects.
     (client.on "end"
       (function ()
         (clientList.splice (clientList.indexOf client) 1)))))
-        
+
 (chatServer.listen port)

@@ -76,20 +76,20 @@ Usage: lispy [-h] [-r] [<infile>] [<outfile>]
         (error (new Error (+ "Error: Invalid flag " flag)))))
 
   run
-    (cond 
+    (cond
       (= "-h" flag) (do (console.log help_str) null)
       (= "-v" flag) (do (console.log (+ "Version " ls.version)) null)
       (= "-r" flag) true)
-  
+
 
   ;; if infile undefined
   infile
     (if arg1
-      arg1 
+      arg1
       (error (new Error "Error: No Input file given")))
 
-  ;; set outfile args.shift. ! outfile set outfile to infile(.js) 
-  outfile 
+  ;; set outfile args.shift. ! outfile set outfile to infile(.js)
+  outfile
     (do
       (var outfile (args.shift))
       (unless outfile
@@ -102,7 +102,7 @@ Usage: lispy [-h] [-r] [<infile>] [<outfile>]
   js
     (try
       (fs.writeFileSync outfile
-        (ls._compile 
+        (ls._compile
           (fs.readFileSync infile "utf8")
         infile)
       "utf8")
