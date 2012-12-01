@@ -588,9 +588,9 @@ var lispyscript = function() {
             return (accum + val);
         },0))) ?
         ("Passed - " + "arrayMonad when null values test") :
-        ("Failed - " + "arrayMonad when null values test")),((true === (9 === (function() {
+        ("Failed - " + "arrayMonad when null values test")),((true === (10 === (function() {
             var i = 1;
-            for(; ((i < 10));) {
+            for(; ((i < 10));) {  
                  console.log(i);
                 i = (i + 1);
 ; };
@@ -689,11 +689,3 @@ var browserTest = function() {
         },""),"\nTotal tests ",tests.length,"\nPassed ",passed,"\nFailed ",failed,"\nDuration ",(new Date() - start),"ms\n"].join('');
     })(lispyscript,"LispyScript Testing")) :
     window.onload = browserTest);
-(function() {
-    var i = 1;
-    for(; ((i < 10));) {
-        console.log(i);
-        i = (i + 1);
-        ; };
-    return i;
-})();

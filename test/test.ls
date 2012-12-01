@@ -142,7 +142,7 @@
      0)) "arrayMonad when null values test")
 
 (assert
- (= 9
+ (= 10
     (do
         (var i 1)
         (for_ (< i 10)
@@ -170,11 +170,3 @@
 (if (undefined? window)
   (console.log (testRunner lispyscript "LispyScript Testing"))
   (set window.onload browserTest))
-
-
-(do
-    (var i 1)
-    (for_ (< i 10)
-          (console.log i)
-          (set i (+ i 1)))
-  i)
